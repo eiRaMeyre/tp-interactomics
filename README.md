@@ -125,14 +125,15 @@ La fonction mitabReader permet de s'assurer que les identifiants uniques sont bi
 - Extraire les lignes MITAB impliquant uniquement des protéines d'EBV, quel est leur nombre ?
 - Extraire les lignes MITAB impliquant des protéines humaines et des protéines d'EBV, quel est leur nombre ?
 ```
-48 protéine EBV
-129 protéine Humaine
+Nombre total d'interactions 230, EBV-EBV 59, EBV-Human 171.
+
 ```
 
 ##### Combien de protéines humaines et virales sont respectivement dans les jeux d'interactions EBV-Human et EBV-EBV ?
 
 ```
-
+48 protéine EBV
+129 protéine Humaine
 ```
 
 ###### Pour la suite du travail assurez-vous d'avoir les deux jeux de données MITAB suivants
