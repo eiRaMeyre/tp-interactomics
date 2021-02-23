@@ -36,12 +36,17 @@ Par exemple, les 100 premières interactions protéine-protéine humaines dispon
 
 Numero de champ | Signification Biologique|
  --- | --- 
-1 | 
-2 |
-3 |
-4 |
-5 |
-6 |
+1 et 2 | Identificateur unique pour interacteur A et B
+3 et 4 | Identificateur alternatif pour interacteur A et B
+5 et 6 | Alias pour A et B
+7 | Méthodes de détection d’interaction
+8 | Nom de famille du premier auteur de la publication
+9 | Identificateur de la publication
+10 et 11| NCBI Taxonomy identificateur pour interacteur A et B
+12 | Types d’interaction
+13 | Bases de données sources et identificateurs
+14 | Identificateur d’interaction
+15 | Score de confiance
 
 ##### Utiliser le PMID de la publication pour récuperer les lignes MITAB des interactions rapportées dans l'étude.
 Une librairie pratique pour manipuler des requêtes HTTP est [requests](https://requests.readthedocs.io/en/master/), eg:
@@ -60,7 +65,7 @@ ans = httpReq.text
 ##### Quelles techniques experimentales mesurent les interactions rapportées dans cette publication?
 
 ```
-
+La technique mesurant les interractions rapportées dans la publication est la technique de Two Hybrid : psi-mi:"MI:0915"(physical association)
 ```
 
 #### Extraction des deux sous-jeux d'interactions
@@ -113,12 +118,15 @@ print(f"Nombre total d'interactions {total}, EBV-EBV {len(EBV_EBV_mitab)}")
 
 ##### Que fait la fonction `mitabReader` ?
 ```
+La fonction mitabReader permet de s'assurer que les identifiants uniques sont bien de UniProt.
 ```
 
 ##### Après avoir réparé ce code veuillez
 - Extraire les lignes MITAB impliquant uniquement des protéines d'EBV, quel est leur nombre ?
 - Extraire les lignes MITAB impliquant des protéines humaines et des protéines d'EBV, quel est leur nombre ?
 ```
+48 protéine EBV
+129 protéine Humaine
 ```
 
 ##### Combien de protéines humaines et virales sont respectivement dans les jeux d'interactions EBV-Human et EBV-EBV ?
@@ -143,7 +151,7 @@ A l'aide des données MITAB et de la librarie [networkx](https://networkx.github
 
 - les arêtes relient deux protéines en interaction
 
-![Graphique](ebv_ebv_network_uniprot.png)
+![Graphique](EBV_EBV_network.jpeg)
 
 ##### Décrivez brièvement ce réseau
 
